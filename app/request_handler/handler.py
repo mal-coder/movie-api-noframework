@@ -1,8 +1,8 @@
+import json
 from http.client import InvalidURL
 from http.server import BaseHTTPRequestHandler
 from urllib.error import URLError
 from urllib.request import urlopen
-import json
 
 from app.config import xml_api_uri, xml_attributes, xml_query_parameter
 from app.security.authentication import authenticate_token
