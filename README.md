@@ -4,7 +4,10 @@ Simple REST API allowing requesting information about movies (but not necessaril
 
 
 Works the same as Movie API but does not use any external libraries nor frameworks.
-  
+
+
+This version was added for demonstrative purposes - to show that it is not necessary to use any external addons while
+programming in Python. It does not cover many aspects which a production ready server should contain.
   
 ## Prerequisites
 (if you do not wish to install anything use the attached *docker-compose* file.):
@@ -39,3 +42,5 @@ Or use the provided `docker-compose.yml`:
 docker-compose build
 docker-compose up
 ```
+
+For local deployment the default URL address is: `http://0.0.0.0:5000/?title={movie title}`
