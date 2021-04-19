@@ -35,7 +35,7 @@ API_KEY=<applications key>
 
 To use Movie API simply start it with:
 ```
-python run.py 
+python main.py
 ```
 Or use the provided `docker-compose.yml`:
 ```
