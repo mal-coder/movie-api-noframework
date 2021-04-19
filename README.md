@@ -24,7 +24,7 @@ $ pipenv install
 ```
 Create the following environmental variables or edit them in *docker-compose.yml*:
 ```
-XML_API_URI=https://www.omdbapi.com/?r=xml&apikey=<your api key> - tagert server address with
+XML_API_URI=https://www.omdbapi.com/?r=xml&apikey=<your api key> - tagert server address !! remeber to update your API key
 API_KEY=<applications key>
 ```
 
@@ -38,56 +38,4 @@ Or use the provided `docker-compose.yml`:
 ```
 docker-compose build
 docker-compose up
-```
-
-The API has only one endpoint `/`.
-Endpoint's description for default settings:
-```
-security:
-  - bearerAuth: [ ]
-paths:
-  /:
-    get:
-      summary: "Retrieve movie information"
-      parameters:
-        - name: "title"
-          in: query
-          description: "Movie title"
-          schema:
-            type: "string"
-            example: "Lost"
-      responses:
-        "200":
-          description: "Data retrieved properly"
-          content:
-            application/json:
-              schema:
-                type: "object"
-                example: {"title": "Lost",
-                          "year": "2004–2010",
-                          "rated": "TV-14",
-                          "released": "22 Sep 2004",
-                          "runtime": "44 min",
-                          "genre": "Adventure, Drama, Fantasy, Mystery, Sci-Fi, Thriller",
-                          "director": "N/A",
-                          "writer": "J.J. Abrams, Jeffrey Lieber, Damon Lindelof",
-                          "actors": "Jorge Garcia, Josh Holloway, Yunjin Kim, Evangeline Lilly",
-                          "plot": "The survivors of a plane crash are forced to work together in order to survive on a seemingly deserted tropical island.",
-                          "language": "English, Portuguese, Spanish, Arabic, French, Korean, German, Latin, Russian, Japanese",
-                          "country": "USA",
-                          "awards": "Won 1 Golden Globe. Another 112 wins &amp; 398 nominations.",
-                          "poster": "https://m.media-amazon.com/images/M/MV5BNzhlY2E5NDUtYjJjYy00ODg3LWFkZWQtYTVmMzU4ZWZmOWJkXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
-                          "metascore": "N/A",
-                          "imdbRating": "8.3",
-                          "imdbVotes": "498,563",
-                          "imdbID": "tt0411008",
-                          "type": "series"}
-        "400":
-          description: "Request validation error"
-        "401":
-          description: "Token validation error"
-        "404":
-          description: "Movie not found"
-        "500":
-          description: "Server Error"
 ```
